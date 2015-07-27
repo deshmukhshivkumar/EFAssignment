@@ -6,10 +6,10 @@ namespace DbModel
         public UserDbContext()
             : base("name=UserDbContext")
         {
-            
+            //Database.SetInitializer<UserDbContext>();
         }
         public DbSet<Users> Users { get; set; }
         public DbSet<Permissions> Permissions { get; set; }
-        public DbSet<UserTypes> UserTypes { get; set; }
+        public DbSet<UserTypes> UserTypes { get; set; }        
     }
 }
