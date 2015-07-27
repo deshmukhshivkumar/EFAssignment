@@ -8,9 +8,9 @@ namespace DbModel
     {
         [Key]
         public int Id { get; set; }
-
-        [Column(TypeName = "nvarchar(50)")]
+        
         [Required]
+        [MaxLength(50)]
         public string Type { get; set; }
 
         public ICollection<Users> Users { get; set; } 

@@ -11,12 +11,11 @@ namespace DbModel
         {
             Users = new Collection<Users>();
         }
-
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [Column(TypeName = "nvarchar(100)")]
+        [Required]        
+        [MaxLength(100)]
         public string Name { get; set; }
 
         public ICollection<Users> Users { get; set; }
