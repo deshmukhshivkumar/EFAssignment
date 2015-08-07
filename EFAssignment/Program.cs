@@ -10,13 +10,13 @@ namespace EFAssignment
         {
             using (var db = new UserDbContext())
             {
-                db.Users.Add(new Users()
-                {
-                    Id = 1,
-                    FirstName = "Shiv",
-                    LastName = "Deshmukh"
-                });
-                db.SaveChanges();
+                //db.Users.Add(new Users()
+                //{
+                //    Id = 1,
+                //    FirstName = "Shiv",
+                //    LastName = "Deshmukh"
+                //});
+                //db.SaveChanges();
                 var list = db.Users.ToList();
                 foreach (var item in list)
                 {

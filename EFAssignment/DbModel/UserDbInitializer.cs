@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
 namespace DbModel
 {
@@ -11,7 +6,13 @@ namespace DbModel
     {
         protected override void Seed(UserDbContext context)
         {
-            
+            var users = Helper.GetUsers(50);
+
+            foreach (var user in users)
+            {
+                context.Users.Add(user);
+            }
+            base.Seed(context);
         }
     }
 }
