@@ -121,6 +121,31 @@ namespace UnitTestProject
             }
         }
 
+        [TestMethod]
+        public void Delete_All_Permissions()
+        {
+            using (var db = new UserDbContext())
+            {
+                var users = db.Users.ToList();
+                Assert.IsNotNull(users);
 
+                foreach (var user in users)
+                {
+                    user.Permissions.Clear();
+                }
+
+                db.SaveChanges();
+
+                var updatedUsers = db.Users.ToList();
+
+                Assert.IsNotNull(updatedUsers);
+
+                foreach (var updatedUser in updatedUsers)
+                {
+                    Assert.AreEqual(0, updatedUser.Permissions.Count());
+                }
+            }
+
+        }
     }
 }
