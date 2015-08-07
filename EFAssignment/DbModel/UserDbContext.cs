@@ -6,7 +6,7 @@ namespace DbModel
         public UserDbContext()
             : base("name=UserDbContext")
         {
-            Database.SetInitializer<UserDbContext>(new UserDbInitializer());
+            Database.SetInitializer<UserDbContext>(new UserDbInitializer());            
         }
         public DbSet<Users> Users { get; set; }
         public DbSet<Permissions> Permissions { get; set; }

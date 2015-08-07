@@ -23,5 +23,23 @@ namespace UnitTestProject
                 }
             }
         }
+
+
+        [TestMethod]
+        public void Update_UserType()
+        {
+            using (var db = new UserDbContext())
+            {
+                var users = db.Users.Take(10).ToList();
+
+                Assert.AreEqual(10, users.Count);
+
+                foreach (var user in users)
+                {
+                    user.UserTypeId 
+                }
+            }
+        }
+
     }
 }
